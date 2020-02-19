@@ -1,0 +1,18 @@
+npm install nodejs
+
+upgrade nodejs to last version
+
+.env file
+npm install express --save
+npm install dotenv --save
+
+
+
+
+
+
+npm install -g json-server
+json-server --watch db.json --port 5432
+
+
+npm install enhanced-resolve@3.3.0
