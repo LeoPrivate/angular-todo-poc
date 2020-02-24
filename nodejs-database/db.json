@@ -1,17 +1,16 @@
 {
   "todos": [
     {
-      "name[name]": "yolo",
-      "name[complete]": "false",
+      "id": 1,
+      "name": "Learn Terraform !"
+    },
+    {
+      "name": "Learn Ansible !",
+      "id": 2
+    },
+    {
+      "name": "Learn Terraform and Ansible !",
       "id": 3
-    },
-    {
-      "name": "ezf",
-      "id": 4
-    },
-    {
-      "name": "z*",
-      "id": 10
     }
   ]
 }
