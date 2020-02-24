@@ -57,6 +57,6 @@ app.get('/todos', (req, res2) => {
 });
 
 app.use(cors());
-app.listen(process.env.PORT, () =>
+app.listen(process.env.PORT, "0.0.0.0", () =>
   console.log(`Example app listening on port ${process.env.PORT}!`),
 );
