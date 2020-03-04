@@ -4,8 +4,9 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "config": "ts-node set-env.ts",
+    "start": "npm run config && ng serve",
+    "build": "npm run config && ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
@@ -22,6 +23,7 @@
     "@angular/platform-browser-dynamic": "^4.0.0",
     "@angular/router": "^4.0.0",
     "core-js": "^2.4.1",
+    "dotenv": "^8.2.0",
     "enhanced-resolve": "^3.3.0",
     "rxjs": "^5.1.0",
     "zone.js": "^0.8.4"
