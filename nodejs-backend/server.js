@@ -34,7 +34,7 @@ app.delete('/', (req, res) => {
 
 app.post('/todos', (req, res2) => {
   request.post({
-	  url:     `http://${URL}:${PORTDB}/todos`,
+	  url:     `http://${process.env.URL}:${process.env.PORTDB}/todos`,
     form:    { name: req.body.name }
   }, (error, response, body) => {
     
@@ -44,14 +44,14 @@ app.post('/todos', (req, res2) => {
 
 app.delete('/todos/:id', (req, res) => {
   console.log(req.params.id);
-  request.delete(`http://${URL}:${PORTDB}/todos` + req.params.id,(err, res, body) => {
+  request.delete(`http://${process.env.URL}:${process.env.PORTDB}/todos` + req.params.id,(err, res, body) => {
   });
   res.send('deleted');
 })
 
 app.get('/todos', (req, res2) => {
   console.log("get");
-  request(`http://${URL}:${PORTDB}/todos`, res2, (err, res, body) => {
+  request(`http://${process.env.URL}:${process.env.PORTDB}/todos`, res2, (err, res, body) => {
     if (err) { return console.log(err); }
     return res2.send(res.body);
   });
