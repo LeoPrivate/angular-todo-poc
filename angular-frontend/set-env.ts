@@ -9,13 +9,13 @@ require('dotenv').config();
 
 const envConfigFile = `export const environment = {
     production: false,
-    apiUrl: 'http://${process.env.URL}:${process.env.PORT}'
+    apiUrl: 'http://${process.env.URL}:${process.env.PORTBACKEND}'
 };
 `;
 
 const envConfigFileProd = `export const environment = {
     production: true,
-    apiUrl: 'http://${process.env.URL}:${process.env.PORT}'
+    apiUrl: 'http://${process.env.URL}:${process.env.PORTBACKEND}'
  };
  `;
 
