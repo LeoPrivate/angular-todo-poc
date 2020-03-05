@@ -40,7 +40,7 @@ app.post('/todos', (req, res2) => {
 
 app.delete('/todos/:id', (req, res) => {
   console.log(req.params.id);
-  request.delete(`http://${process.env.URL}:${process.env.PORTDB}/todos/${req.params.id}` + req.params.id,(err, res, body) => {
+  request.delete(`http://${process.env.URL}:${process.env.PORTDB}/todos/${req.params.id}`,(err, res, body) => {
   });
   res.send('deleted');
 })
