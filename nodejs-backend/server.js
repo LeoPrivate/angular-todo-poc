@@ -14,12 +14,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 
 
-app.get('/', (req, res) => {
-  return request(`http://${process.env.URL}:${process.env.PORTDB}/todos`, (err, res, body) => {
-    if (err) { return console.log(err); }
-    return res.body;
-  });
-  
+app.get('/', (req, res) => { 
+  return res.send('Received a GET HTTP method');
 });
 app.post('/', (req, res) => {
   return res.send('Received a POST HTTP method');
