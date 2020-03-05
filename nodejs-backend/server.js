@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 
 require('dotenv').config();
+
 const bodyParser = require('body-parser'); 
 
 const app = express();
@@ -14,7 +15,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 
 app.get('/', (req, res) => {
-  return request('http://localhost:5432/todos', (err, res, body) => {
+  return request(`http://${URL}:${PORTDB}/todos`, (err, res, body) => {
     if (err) { return console.log(err); }
     return res.body;
   });
@@ -33,7 +34,7 @@ app.delete('/', (req, res) => {
 
 app.post('/todos', (req, res2) => {
   request.post({
-	  url:     'http://localhost:5432/todos',
+	  url:     `http://${URL}:${PORTDB}/todos`,
     form:    { name: req.body.name }
   }, (error, response, body) => {
     
@@ -43,14 +44,14 @@ app.post('/todos', (req, res2) => {
 
 app.delete('/todos/:id', (req, res) => {
   console.log(req.params.id);
-  request.delete('http://localhost:5432/todos/' + req.params.id,(err, res, body) => {
+  request.delete(`http://${URL}:${PORTDB}/todos` + req.params.id,(err, res, body) => {
   });
   res.send('deleted');
 })
 
 app.get('/todos', (req, res2) => {
   console.log("get");
-  request('http://localhost:5432/todos', res2, (err, res, body) => {
+  request(`http://${URL}:${PORTDB}/todos`, res2, (err, res, body) => {
     if (err) { return console.log(err); }
     return res2.send(res.body);
   });
